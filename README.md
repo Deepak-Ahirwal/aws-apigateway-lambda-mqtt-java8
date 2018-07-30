@@ -31,7 +31,7 @@ The recommended way to use the AWS IoT Device SDK for Java in your project is to
   </dependency>
 </dependencies>
 ```
-#Arguments for the Applications
+# Arguments for the Applications
 To run the samples, you will also need to provide the following arguments through the command line:
 * clientEndpoint: client endpoint, in the form of <prefix>.iot.<region>.amazonaws.com
 * clientId: client ID
