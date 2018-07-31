@@ -45,7 +45,7 @@ You will also need to provide either set of the following arguments for authenti
 
 ##  Step 1: Create an API
 
-1.	Sign into the API Gateway console at https://console.aws.amazon.com/lambda
+1.	Sign into the API Gateway console at [lambda](https://console.aws.amazon.com/lambda)
 2.	Click on Create function button.
 3.	Select Author from scratch.
 4.	In Author from scratch section specify function name, name could be anything (for example myLambdaFunction).
@@ -58,7 +58,7 @@ You will also need to provide either set of the following arguments for authenti
 
 # Create API Gateway
 ##  Step 1: Create an API
-1.	Sign into the API Gateway console at https://console.aws.amazon.com/apigateway.
+1.	Sign into the API Gateway console at [api-gateway](https://console.aws.amazon.com/apigateway)
 2.	Click on Create new API radio button.
 3.	Specifiy setting Api name,Description and endpoint type 
 4.	Click on the **Create API button.**
