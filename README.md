@@ -52,9 +52,29 @@ You will also need to provide either set of the following arguments for authenti
 5.	Select runtime environment “Select java 8”
 6.	Specify Role either create new or create custom or select existing if any.
 7.	After specify role click on create function button.
-8.	Select Add triggers here you can select any services to trigger lambda function here we select API Gateway to trigger our lambda function.In Function code “upload your jar or zip file”, “select runtime environment” and in handler specify Either “com.amazon.cts.service.app.LambdaFunctionHandler:: handleRequest” or package.class-name. For example
-"com.amazon.cts.service.app.LambdaFunctionHandler" would call the handleRequest method defined in LambdaFunctionHandler.java.
+8.	Select Add triggers here you can select any services to trigger lambda function here we select API Gateway to trigger our lambda function.In Function code **“upload your jar or zip file”, “select runtime environment”** and in handler specify either **“com.amazon.cts.service.app.LambdaFunctionHandler:: handleRequest” or package.class-name**. For example
+**"com.amazon.cts.service.app.LambdaFunctionHandler"** would call the handleRequest method defined in LambdaFunctionHandler.java.
 9.	Click on upload button.
 
+# Create API Gateway
+##  Step 1: Create an API
+1.	Sign into the API Gateway console at https://console.aws.amazon.com/apigateway.
+2.	Click on Create new API radio button.
+3.	Specifiy setting Api name,Description and endpoint type 
+4.	Click on the **Create API button.**
+
+##  Step 2: Create a Resource
+1.	In the API Gateway console, choose the resource root (/), and then choose Create Resource on click of **Action** button.
+2.	For **Resource Name**, type a name for your new resource (for example, mylambdafunction).
+3.	For **Resource Path**, leave the default value of /any.
+4.	Choose **Create Resource**.
+
+##  Step 3: Deploy the API
+1.	In the Resources pane, choose **Deploy API**.
+2.	For Deployment stage, choose **New Stage**.
+3.	For Stage name, type **Production** or **Dev**.
+4.	For Stage description, spcify description for your api.
+5.	For Deployment description, type deployment description for example **Calling Lambda functions**.
+6.	Choose **Deploy**.
 
 
