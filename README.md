@@ -77,4 +77,12 @@ You will also need to provide either set of the following arguments for authenti
 5.	For Deployment description, type deployment description for example **Calling Lambda functions**.
 6.	Choose **Deploy**.
 
+# Setting up Aws IoT
+1.	Register on AWS.
+2.	Select the IoT device 
+3.	Register AWS IoT.
+4.	Create a security certificate.
+5.	Configure security access.
+
+To set up the above steps, [refer aws developer guide](https://docs.aws.amazon.com/iot/latest/developerguide/iot-console-signin.html)
 
