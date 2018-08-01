@@ -33,13 +33,13 @@ The recommended way to use the AWS IoT Device SDK for Java in your project is to
 ```
 # Arguments for the Applications
 To run the samples, you will also need to provide the following arguments through the command line:
-* clientEndpoint: client endpoint, in the form of <prefix>.iot.<region>.amazonaws.com
-* clientId: client ID
-* thingName: AWS IoT thing name (not required for the Publish sample)
+- **clientEndpoint**: client endpoint, in the form of <prefix>.iot.<region>.amazonaws.com
+- **clientId**: specify client ID.
+- **thingName**: AWS IoT thing name (not required for the Publish sample)
 You will also need to provide either set of the following arguments for authentication. For an MQTT connection, provide these arguments:
-* certificateFile: X.509 based certificate file (For Just-in-time registration, this is the concatenated file from both the device certificate and CA certificate. For more information about Just-in-Time Registration, please see this blog.
-* privateKeyFile: private key file
-* keyAlgorithm: (optional) RSA or EC. If not specified, RSA is used.
+- **certificateFile**: X.509 based certificate file (For Just-in-time registration, this is the concatenated file from both the device certificate and CA certificate. For more information about Just-in-Time Registration, please see this blog.
+- **privateKeyFile**: private key file
+- **keyAlgorithm**: (optional) RSA or EC. If not specified, RSA is used.
   
 # Create Lambda Function
 
@@ -84,5 +84,32 @@ You will also need to provide either set of the following arguments for authenti
 4.	Create a security certificate.
 5.	Configure security access.
 
-To set up the above steps, [refer aws developer guide](https://docs.aws.amazon.com/iot/latest/developerguide/iot-console-signin.html)
+To set up the above steps, [refer AWS developer guide](https://docs.aws.amazon.com/iot/latest/developerguide/iot-console-signin.html)
+
+# AWS IoT Rule Actions
+As per AWS documentation AWS IoT rule actions are used to specify what to do when a rule is triggered. You can define actions to write data to a DynamoDB database or a Kinesis stream or to invoke a Lambda function, and more. 
+For more details, [refer AWS developer guide](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html).
+
+# Setting up Rules
+For aws-iot-mqtt-poc, we are using below two services.
+* SNS (Simple Notification Service).  <br/>
+Steps to create an Amazon SNS rules [refer here](https://docs.aws.amazon.com/iot/latest/developerguide/iot-sns-rule.html).
+* Dynamo DB <br/>
+  Steps to Create a Dynamo DB rule [refer here](https://docs.aws.amazon.com/iot/latest/developerguide/iot-ddb-rule.html).
+  
+# Subscribe your topic using AWS IoT MQTT Client
+
+##  To test your rule with AWS IoT MQTT client:
+1.	In the AWS IoT console, in the left navigation pane, choose Test.
+2.	On the MQTT client page, in the Subscribe section, in the Subscription topic field, type my/topic or the topic you used in the rule.
+3.  Click on the **Subscribe to topic**.
+Once your topic is subscribe run the application 
+
+### Run the Applications
+You can use the following commands to execute the sample applications (assuming 
+TLS mutual authentication is used).
+* To run the Publish sample, use the following command:
+```sh
+$ mvn exec:java -Dexec.mainClass="com.amazon.cts.client.app.MqttClientApp" -Dexec.args="-clientEndpoint <prefix>.iot.<region>.amazonaws.com -clientId <unique client id> -certificateFile <certificate file> -privateKeyFile <private key file>"
+```
 
