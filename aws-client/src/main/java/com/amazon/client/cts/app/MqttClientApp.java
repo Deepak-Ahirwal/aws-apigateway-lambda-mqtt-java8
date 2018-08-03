@@ -65,7 +65,7 @@ public class MqttClientApp {
 	}
 
 	public static void main ( String args[] ) throws InterruptedException, AWSIotException, AWSIotTimeoutException, IOException {
-		System.out.println ( "deepak" );
+		
 		CommandArguments arguments = CommandArguments.parse ( args );
 		initClient ( arguments );
 
@@ -75,7 +75,8 @@ public class MqttClientApp {
 		awsIotClient.subscribe ( topic , true );
 		String message;
 		JSONObject json = new JSONObject ( );
-		json.put ( "name" , "deepak-ahirwal" );
+		json.put ( "serialNumber" , "2" );
+		json.put ( "clickType" , "Button" );
 		message = json.toString ( );
 		System.out.println ( message );
 		try {
