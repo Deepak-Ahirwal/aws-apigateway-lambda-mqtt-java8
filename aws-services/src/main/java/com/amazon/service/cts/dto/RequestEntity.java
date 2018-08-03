@@ -3,19 +3,34 @@ package com.amazon.service.cts.dto;
 
 public class RequestEntity {
 
-	private String name;
+	private String serialNumber;
+	
+	private String clickType;
 
-	public String getName () {
-		return name;
+	
+	public String getSerialNumber () {
+		return serialNumber;
 	}
 
-	public void setName ( String name ) {
-		this.name = name;
+	
+	public void setSerialNumber ( String serialNumber ) {
+		this.serialNumber = serialNumber;
 	}
+
+	
+	public String getClickType () {
+		return clickType;
+	}
+
+	
+	public void setClickType ( String clickType ) {
+		this.clickType = clickType;
+	}
+
 
 	@ Override
 	public String toString () {
-		return "RequestEntity [name=" + name + "]";
+		return "RequestEntity [serialNumber=" + serialNumber + ", clickType=" + clickType + "]";
 	}
 
 }
