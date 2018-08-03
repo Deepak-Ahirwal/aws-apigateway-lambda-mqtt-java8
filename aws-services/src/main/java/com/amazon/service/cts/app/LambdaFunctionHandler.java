@@ -1,7 +1,6 @@
 
 package com.amazon.service.cts.app;
 
-import java.util.Date;
 import java.util.UUID;
 
 import com.amazon.service.cts.dto.RequestEntity;
@@ -15,17 +14,17 @@ public class LambdaFunctionHandler implements RequestHandler < RequestEntity , R
 	
 	@ Override
 	public ResponseEntity handleRequest ( RequestEntity input,Context context ) {
-		//context.getLogger ( ).log ( "Input: " + input );
+		context.getLogger ( ).log ( "Input: " + input );
 		ResponseEntity response = new ResponseEntity ( );
 		try {
-			response.setMessage ( "Hello " + input.getName ( ) + " Response Time : " + new Date ( ) );
+			response.setMessage ( "Message published for serial number " + input.getSerialNumber ( ) + "," + input.getClickType ( ) + " action performed" );
 			response.setTransactionId ( UUID.randomUUID ( ).toString ( ) );
 		} catch ( Exception e ) {
 			e.printStackTrace ( );
 			response.setMessage ( e.getMessage ( ) );
 		}
-		//context.getLogger ( ).log ( "Response : " + response );
-		System.out.println ( response );
+		context.getLogger ( ).log ( "Response : " + response );
+		
 		return response;
 
 	}
