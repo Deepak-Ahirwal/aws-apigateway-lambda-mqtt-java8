@@ -23,7 +23,8 @@ public class LambdaFunctionHandlerTest {
 	public static void createInput () throws IOException {
 		// TODO: set up your sample input object here.
 		RequestEntity entity = new RequestEntity ( );
-		entity.setName ( "Lambda" );
+		entity.setSerialNumber ( "1" );
+		entity.setClickType ( "button" );
 		input = entity;
 	}
 
