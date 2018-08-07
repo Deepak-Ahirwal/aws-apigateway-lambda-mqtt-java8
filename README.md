@@ -33,7 +33,7 @@ The recommended way to use the AWS IoT Device SDK for Java in your project is to
 ```
 # Arguments for the Applications
 To run the samples, you will also need to provide the following arguments through the command line:
-- **clientEndpoint**: client endpoint, in the form of <prefix>.iot.<region>.amazonaws.com
+- **clientEndpoint**: client endpoint, in the form of prefix.iot.region.amazonaws.com.
 - **clientId**: specify client ID.
 - **thingName**: AWS IoT thing name (not required for the Publish sample)
 You will also need to provide either set of the following arguments for authentication. For an MQTT connection, provide these arguments:
